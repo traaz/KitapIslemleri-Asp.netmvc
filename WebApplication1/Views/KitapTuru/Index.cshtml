@@ -1,0 +1,46 @@
+﻿@model List<KitapTuru>
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div>
+                <h1>Kitap Türleri</h1>
+            </div>
+        </div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            
+            <th>Ad</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach(var kitapTur in Model)
+        {
+            <tr>
+
+                
+                <td>@kitapTur.Ad</td>
+                <td><a class="btn btn-info" asp-action="Guncelle" asp-controller="KitapTuru" asp-route-id="@kitapTur.Id" role="button" style="width:90px">Güncelle</a></td>
+                <td><a class="btn btn-danger" asp-action="Sil" asp-controller="KitapTuru" asp-route-id="@kitapTur.Id" role="button">Sil</a></td>
+
+            </tr>
+        }
+      
+    </tbody>
+
+</table>
+
+<div >
+        <a class="btn btn-primary" asp-action="KitapTuruEkle" asp-controller="KitapTuru" role="button">Kitap Türü Ekle</a>
+</div>
+
+</div>
+
+

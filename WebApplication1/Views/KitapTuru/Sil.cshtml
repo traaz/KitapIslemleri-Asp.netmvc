@@ -1,0 +1,14 @@
+﻿@model KitapTuru
+
+<h2>Sil</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kitap Türü Adı</label>
+        <input asp-for="Ad" disabled class="form-control" placeholder="Kitap Türü">
+        <span asp-validation-for="Ad" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Sil</button>
+    <a class="btn btn-primary mt-3" asp-action="Index" asp-controller="KitapTuru" role="button">Kitap Türlerine Git</a>
+</form>
