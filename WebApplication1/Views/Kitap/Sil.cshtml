@@ -1,0 +1,20 @@
+﻿@model Kitap
+
+<h2>Sil</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kitap Adı</label>
+        <input asp-for="KİtapAdi" disabled class="form-control" placeholder="Kitap Adı">
+        <span asp-validation-for="KİtapAdi" class="text-danger"></span>
+        <label for="exampleInputEmail1">Açıklama</label>
+        <input asp-for="Aciklama" disabled class="form-control" placeholder="Aciklama Giriniz">
+        <label for="exampleInputEmail1">Yazar</label>
+        <input asp-for="Yazar" disabled class="form-control" placeholder="Yazar Giriniz">
+        <label for=number>Fiyat</label>
+        <input asp-for="Fiyat" disabled class="form-control" placeholder="Fiyat Giriniz">
+    </div>
+
+    <button type="submit" class="btn btn-success mt-3">Sil</button>
+    <a class="btn btn-primary mt-3" asp-action="Index" asp-controller="Kitap" role="button">Kitaplara Git</a>
+</form>

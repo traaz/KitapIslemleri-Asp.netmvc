@@ -1,0 +1,29 @@
+﻿@model Kitap
+
+@if (TempData["basarisiz"] != null)
+{
+    <h3 style ="color:red">@TempData["basarisiz"]</h3>
+}
+
+<h2>Ekle</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="exampleInputEmail1">Kitap Adı</label>
+        <input asp-for="KİtapAdi" class="form-control" placeholder="Kitap İsmi Giriniz">
+        <span asp-validation-for="KİtapAdi" class="text-danger"></span>
+        <label for="exampleInputEmail1">Açıklama</label>
+        <input asp-for="Aciklama" class="form-control" placeholder="Aciklama Giriniz">
+        <label for="exampleInputEmail1">Yazar</label>
+        <input asp-for="Yazar" class="form-control" placeholder="Yazar Giriniz">
+
+        <label for="exampleInputEmail1">Kitap Türü</label>
+        <select asp-for="KitapTuruId"  asp-items="ViewBag.KitapTuruList" class="form-select">
+            </select>
+        <label for="exampleInputEmail1">Fiyat</label>
+        <input type="number" asp-for="Fiyat" class="form-control" placeholder="Fiyat Giriniz">
+    </div>
+ 
+    <button type="submit" class="btn btn-success mt-3">Ekle</button>
+    <a class="btn btn-primary mt-3" asp-action="Index" asp-controller="Kitap" role="button">Kitaplara Git</a>
+</form>

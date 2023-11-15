@@ -1,0 +1,61 @@
+﻿@model List<Kitap>
+@using WebApplication1.Utility;
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div>
+                <h1>Kitaplar</h1>
+            </div>
+        </div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            
+            <th>Ad</th>
+            <th>Aciklama</th>
+            <th>Yazar</th>
+            <th>Fiyat</th>
+            <th>Kitap Türü</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach(var kitap in Model)
+        {
+            <tr>
+
+                
+                <td>@kitap.KİtapAdi</td>
+                    <td>@kitap.Aciklama</td>
+                    <td>@kitap.Yazar</td>
+                    <td>@kitap.Fiyat</td>
+                    <td>@kitap.KitapTuru.Ad</td>
+                    @if (User.IsInRole(UserRoles.Role_Admin))
+                    {
+                        <td><a class="btn btn-info" asp-action="Guncelle" asp-controller="Kitap" asp-route-id="@kitap.Id" role="button" style="width:90px">Güncelle</a></td>
+                        <td><a class="btn btn-danger" asp-action="Sil" asp-controller="Kitap" asp-route-id="@kitap.Id" role="button">Sil</a></td>
+
+                    }
+
+            </tr>
+        }
+      
+    </tbody>
+
+</table>
+
+<div >
+      @if (User.IsInRole(UserRoles.Role_Admin))
+                        {
+            <a class="btn btn-primary" asp-action="KitapEkle" asp-controller="Kitap" role="button">Kitap Ekle</a>
+
+                        }
+</div>
+
+</div>
+
+
